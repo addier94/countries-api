@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import slugify from "slugify";
 import { CallingCodes as NativeCallingCode } from "./Calling-codes";
+import NumberFormat from "react-number-format";
 
 const CountryStyled = styled.div`
   cursor: pointer;
@@ -71,7 +72,15 @@ function Country({
         </h2>
         {/* <p><strong>AF:</strong> {alpha2Code}</p> */}
         <p>
-          <strong>Población:</strong> {population}
+          {/* <strong>Población:</strong> {population} */}
+          <strong>
+            Población:{" "}
+            <NumberFormat
+              value={population}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          </strong>
         </p>
         <p>
           <strong>Region:</strong> {region}
